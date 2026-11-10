@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# Grok Bot wrapper: replaces "${CLAUDE_PLUGIN_ROOT}/scripts/claude-seo" run <script>
+# Usage: /workspace/seo-toolkit/seo <script>[.py] [args...]
+set -euo pipefail
+export SEO_TOOLKIT_ROOT=/workspace/seo-toolkit
+export CLAUDE_PLUGIN_ROOT="$SEO_TOOLKIT_ROOT"
+export SEO_TOOLKIT_FAKEIP="${SEO_TOOLKIT_FAKEIP:-1}"   # box DNS fake-IP proxy (198.18/15)
+s="${1:?script name}"; shift
+exec "$SEO_TOOLKIT_ROOT/.venv/bin/python" "$SEO_TOOLKIT_ROOT/scripts/${s%.py}.py" "$@"
