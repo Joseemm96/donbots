@@ -1,0 +1,175 @@
+[
+  {
+    "id": "don-bot",
+    "name": "Don Bot",
+    "tag": "Don Bot",
+    "role": "Asistente principal. Recibe el pedido, lo resuelve o lo delega.",
+    "tagRole": "CEO",
+    "area": "ceo",
+    "color": "#1E3354",
+    "skin": "#F3D2C2",
+    "accent": "#E4C56A",
+    "routines": [
+      {
+        "name": "WhatsApp Web keepalive",
+        "schedule": "8:00, 14:00 y 20:00",
+        "summary": "Abre WhatsApp Web en la pestaña que ya está, sin entrar a ningún chat. Avisa solo si aparece el QR.",
+        "active": true
+      },
+      {
+        "name": "Vigilar ofertas VPN Black Friday",
+        "schedule": "9:00 diario, hasta el 28 nov 2026",
+        "summary": "Revisa precios oficiales de VPN y avisa solo si hay una bajada nueva. Después manda un cierre y se quita.",
+        "active": true
+      }
+    ]
+  },
+  {
+    "id": "don-web-architect",
+    "name": "Don Web Architect",
+    "tag": "Architect",
+    "role": "Arquitecto web. Arma el plan y no toca producción.",
+    "tagRole": "Arquitecto",
+    "area": "web",
+    "color": "#4F46E5",
+    "skin": "#F6D3C4",
+    "routines": []
+  },
+  {
+    "id": "don-wordpress-implementer",
+    "name": "Don WordPress Implementer",
+    "tag": "WordPress",
+    "role": "Dev WordPress. Implementa, mantiene sitios y deja el handoff para QA.",
+    "tagRole": "Dev WP",
+    "area": "web",
+    "color": "#2563EB",
+    "skin": "#F0C8AE",
+    "routines": []
+  },
+  {
+    "id": "don-web-qa",
+    "name": "Don Web QA",
+    "tag": "Web QA",
+    "role": "QA web. Prueba flujos reales y cierra en PASS, PASS WITH ISSUES o FAIL.",
+    "tagRole": "QA",
+    "area": "web",
+    "color": "#0F766E",
+    "skin": "#F3D5C4",
+    "routines": []
+  },
+  {
+    "id": "don-seo-specialist",
+    "name": "Don SEO Specialist",
+    "tag": "SEO",
+    "role": "SEO técnico. Audita y prioriza hallazgos en High, Medium y Low.",
+    "tagRole": "SEO",
+    "area": "web",
+    "color": "#16A34A",
+    "skin": "#E8C4A8",
+    "routines": []
+  },
+  {
+    "id": "don-project-manager",
+    "name": "Don Project Manager",
+    "tag": "PM",
+    "role": "PM del equipo web. Mira la carga en ClickUp y pide aprobación antes de cambiar nada.",
+    "tagRole": "ClickUp",
+    "area": "web",
+    "color": "#EA580C",
+    "skin": "#F6D3C4",
+    "routines": [
+      {
+        "name": "Vigilancia de un write largo",
+        "schedule": "Cada 20 min, cuando hay un write",
+        "summary": "Plantilla pausada: vigilar un proceso largo y avisar solo al terminar o si se atasca. Nunca escribir en el sitio.",
+        "active": false
+      }
+    ]
+  },
+  {
+    "id": "don-viaje",
+    "name": "Don Viaje",
+    "tag": "Viaje",
+    "role": "Viajes. Busca hospedaje y arma un comparativo. No escribe a nadie sin tu OK.",
+    "tagRole": "Viajes",
+    "area": "personal",
+    "color": "#0284C7",
+    "skin": "#F3D5C4",
+    "routines": []
+  },
+  {
+    "id": "don-maracucho",
+    "name": "Don Maracucho",
+    "tag": "Maracucho",
+    "role": "Eventos y promos de Maracaibo. Arma el newsletter y no repite lo ya enviado.",
+    "tagRole": "Eventos",
+    "area": "personal",
+    "color": "#EAB308",
+    "skin": "#E2B48C",
+    "routines": [
+      {
+        "name": "Recolector de eventos",
+        "schedule": "Todos los días, 20:00",
+        "summary": "Revisa en silencio posts y stories nuevos y anota eventos o promos sin duplicar. Avisa solo si la cuenta pide login.",
+        "active": true
+      },
+      {
+        "name": "Newsletter de Maracaibo",
+        "schedule": "Lunes y viernes 8:00, miércoles 11:00",
+        "summary": "Junta lo recolectado, arma el newsletter (eventos, entradas, promos, dato extra) y se lo manda a Vessel.",
+        "active": true
+      }
+    ]
+  },
+  {
+    "id": "don-finanzas",
+    "name": "Don Finanzas",
+    "tag": "Finanzas",
+    "role": "Hojas de cálculo. Comisiones y conversión de gastos a la tasa del día. No mueve dinero.",
+    "tagRole": "Cuentas",
+    "area": "personal",
+    "color": "#047857",
+    "skin": "#F3D5C4",
+    "routines": []
+  },
+  {
+    "id": "don-video",
+    "name": "Don Video",
+    "tag": "Video",
+    "role": "Edición. Transcribe, corta con ffmpeg y quema subtítulos. No publica nada solo.",
+    "tagRole": "Edición",
+    "area": "contenido",
+    "color": "#DB2777",
+    "skin": "#F6D3C4",
+    "routines": []
+  },
+  {
+    "id": "don-researcher",
+    "name": "Don Researcher",
+    "tag": "Researcher",
+    "role": "Investiga, resume y separa hechos de rumores. Manda el digest de AI.",
+    "tagRole": "Research",
+    "area": "contenido",
+    "color": "#7C3AED",
+    "skin": "#F0C8AE",
+    "routines": [
+      {
+        "name": "Digest de AI",
+        "schedule": "Todos los días, 21:00",
+        "summary": "Lee lo publicado en las últimas 24 h sobre AI y lo resume en español, con enlace a cada fuente. Si no hay nada, una línea.",
+        "active": true
+      }
+    ]
+  },
+  {
+    "id": "don-lcl3",
+    "name": "Don LCL3",
+    "tag": "LCL3",
+    "role": "Sin asignación. Quedó creado y nunca se usó.",
+    "tagRole": "Sin rol",
+    "area": "contenido",
+    "color": "#64748B",
+    "skin": "#F3D5C4",
+    "routines": []
+  }
+]
