@@ -4,6 +4,10 @@ Respaldo privado de **todos los bots que Vessel (José Mavarez · GitHub `Joseem
 
 > Nada de este repo contiene contraseñas, tokens, cookies, códigos ni datos de tarjetas. Lo que hace falta para autenticar está listado (solo por nombre) en [`SECRETS.md`](SECRETS.md).
 
+## Oficina virtual
+
+Prototipo 3D en el navegador: salas por área, el escritorio de Don Bot y las salas de estado (Trabajando, Esperando tu OK, Libre). Los avatares caminan cuando cambia el estado. Hoy es una simulación; el plan para enchufarlo a Hermes en el VPS está en [`office/README.md`](office/README.md).
+
 ## Empieza aquí
 1. [`AGENTS.md`](AGENTS.md): instrucciones para cualquier agente que lea este repo.
 2. [`USER.md`](USER.md): quién es Vessel, sus preferencias y las **reglas globales** (aplican a todos los bots).

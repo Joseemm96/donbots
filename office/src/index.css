@@ -1,0 +1,406 @@
+:root {
+  color: #1c1c1c;
+  background: #f4f1ee;
+  font-family: Outfit, "Avenir Next", "Segoe UI", sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+* { box-sizing: border-box; }
+
+html, body, #root {
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+button, textarea { font: inherit; color: inherit; }
+
+.stage { position: relative; height: 100%; }
+
+.stage canvas { display: block; }
+
+.topbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px 22px 8px;
+  pointer-events: none;
+}
+
+.brand, .nav-link, .icon-btn, .sheet button, .team button, .panel button {
+  pointer-events: auto;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  text-align: left;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.brand small {
+  display: block;
+  font-weight: 500;
+  font-size: 12px;
+  color: #6d675f;
+}
+
+.brand-mark {
+  width: 32px;
+  height: 32px;
+  border-radius: 9px;
+  display: grid;
+  place-items: center;
+  background: #1e3354;
+  color: #f4e2b0;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+}
+
+nav { display: flex; gap: 6px; }
+
+.nav-link {
+  border: 0;
+  background: transparent;
+  padding: 8px 10px;
+  border-radius: 999px;
+  cursor: pointer;
+  color: #3a3a3a;
+  font-weight: 500;
+}
+
+.nav-link.on { background: #fff; font-weight: 700; box-shadow: 0 6px 16px rgba(40, 30, 20, 0.08); }
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #fff;
+  color: #1c1c1c;
+  border-radius: 999px;
+  padding: 6px 8px 6px 10px;
+  font-size: 13px;
+  font-weight: 700;
+  white-space: nowrap;
+  box-shadow: 0 8px 18px rgba(40, 30, 20, 0.12);
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 99px;
+  flex: none;
+}
+
+.badge {
+  min-width: 22px;
+  padding: 2px 7px;
+  border-radius: 999px;
+  color: #fff;
+  font-size: 12px;
+  text-align: center;
+}
+
+.tag {
+  background: #2a2a2a;
+  color: #fff;
+  border-radius: 8px;
+  padding: 4px 7px 5px;
+  text-align: center;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.16);
+  position: relative;
+}
+
+.tag b, .tag span { display: block; white-space: nowrap; }
+.tag b { font-size: 11px; font-weight: 700; }
+.tag span { font-size: 10px; font-weight: 500; opacity: 0.82; }
+
+.tag::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -5px;
+  transform: translateX(-50%);
+  border: 5px solid transparent;
+  border-top-color: #2a2a2a;
+  border-bottom: 0;
+}
+
+.tag-on { outline: 2px solid #fff; }
+
+.source-chip {
+  position: absolute;
+  left: 18px;
+  bottom: 16px;
+  z-index: 25;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0;
+  background: rgba(255, 255, 255, 0.92);
+  border-radius: 999px;
+  padding: 7px 12px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #2c2926;
+  box-shadow: 0 6px 16px rgba(40, 30, 20, 0.08);
+}
+
+.source-chip .dot { width: 7px; height: 7px; }
+.source-chip span {
+  margin-left: 6px;
+  padding-left: 8px;
+  border-left: 1px solid #e4ddd4;
+  color: #6d675f;
+  font-weight: 600;
+}
+
+.panel {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  bottom: 12px;
+  z-index: 40;
+  width: min(380px, calc(100vw - 24px));
+  overflow: auto;
+  background: #fffcf8;
+  border-radius: 18px;
+  padding: 18px 18px 22px;
+  box-shadow: 0 18px 50px rgba(40, 30, 20, 0.16);
+}
+
+.panel-head, .sheet header {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.panel-head h2, .sheet h2 {
+  margin: 0;
+  font-size: 20px;
+}
+
+.panel-head p, .area {
+  margin: 3px 0 0;
+  color: #5e584f;
+  font-size: 14px;
+}
+
+.area { font-size: 12px; font-weight: 600; }
+
+.swatch {
+  width: 14px;
+  height: 14px;
+  margin-top: 5px;
+  border-radius: 99px;
+  flex: none;
+}
+
+.icon-btn {
+  margin-left: auto;
+  border: 0;
+  background: #f3efe9;
+  width: 32px;
+  height: 32px;
+  border-radius: 99px;
+  cursor: pointer;
+  font-size: 20px;
+  line-height: 1;
+}
+
+.panel section { margin-top: 18px; }
+.panel h3 {
+  margin: 0 0 8px;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #8a837a;
+}
+
+.chip {
+  display: inline-flex;
+  margin: 0;
+  border-radius: 999px;
+  padding: 4px 10px;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.chip-trabajando { background: #e5f6ee; color: #157a45; }
+.chip-esperando { background: #fff3dc; color: #9a6408; }
+.chip-libre { background: #fde8f1; color: #a33b6d; }
+
+.task { margin: 0; line-height: 1.45; }
+
+.muted { color: #6d675f; margin: 0; }
+
+.routines, .log, .team, .routine-sheet ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.routines li, .log li, .routine-sheet li {
+  padding: 10px 0;
+  border-top: 1px solid #f0ebe4;
+}
+
+.routine-top, .routine-sheet li {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 8px;
+  align-items: baseline;
+}
+
+.routines em, .log time, .routine-sheet em {
+  display: block;
+  width: 100%;
+  color: #8a837a;
+  font-style: normal;
+  font-size: 12px;
+}
+
+.routines p, .log p, .routine-sheet p { margin: 4px 0 0; font-size: 14px; line-height: 1.4; }
+
+.flag {
+  font-size: 11px;
+  font-weight: 700;
+  border-radius: 999px;
+  padding: 2px 7px;
+}
+.flag.on { background: #e5f6ee; color: #157a45; }
+.flag.off { background: #f3efe9; color: #6d675f; }
+
+form { margin-top: 18px; display: grid; gap: 8px; }
+form label { font-size: 12px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; color: #8a837a; }
+
+textarea {
+  width: 100%;
+  resize: vertical;
+  border: 1px solid #e6e0d8;
+  background: #fff;
+  border-radius: 12px;
+  padding: 10px 12px;
+  min-height: 76px;
+}
+
+textarea:focus { outline: 2px solid #1e3354; border-color: transparent; }
+
+form button, .team button {
+  border: 0;
+  cursor: pointer;
+}
+
+form button {
+  justify-self: start;
+  background: #1c1c1c;
+  color: #fff;
+  border-radius: 999px;
+  padding: 9px 16px;
+  font-weight: 700;
+}
+
+form button:disabled { opacity: 0.4; cursor: default; }
+
+.form-note { margin: 0; font-size: 13px; color: #3d6b4f; }
+
+.scrim {
+  position: absolute;
+  inset: 0;
+  z-index: 34;
+  border: 0;
+  background: rgba(40, 32, 24, 0.18);
+  cursor: pointer;
+}
+
+.sheet {
+  position: absolute;
+  z-index: 36;
+  top: 72px;
+  right: 18px;
+  width: min(440px, calc(100vw - 28px));
+  max-height: calc(100% - 96px);
+  overflow: auto;
+  background: #fffcf8;
+  border-radius: 18px;
+  padding: 16px 16px 20px;
+  box-shadow: 0 18px 50px rgba(40, 30, 20, 0.16);
+}
+
+.team button {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-align: left;
+  background: transparent;
+  border-radius: 12px;
+  padding: 8px;
+}
+
+.team button:hover { background: #f6f1ea; }
+.team strong, .team small { display: block; }
+.team small { color: #6d675f; font-size: 12px; }
+.team .chip { margin-left: auto; }
+
+.routine-sheet article + article { margin-top: 8px; }
+.routine-sheet h3 { margin: 12px 0 0; font-size: 15px; }
+.routine-sheet span { font-size: 12px; color: #157a45; font-weight: 700; }
+
+.config p { line-height: 1.5; }
+.config code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 12px;
+  background: #f3efe9;
+  padding: 1px 5px;
+  border-radius: 6px;
+}
+
+.boot, .boot-error {
+  min-height: 100%;
+  display: grid;
+  place-items: center;
+  padding: 32px;
+  text-align: center;
+}
+
+.boot-error { color: #6b2b2b; }
+
+@media (max-width: 800px) {
+  .topbar {
+    flex-wrap: wrap;
+    padding: 8px 10px 0;
+    row-gap: 4px;
+  }
+  .brand > span:last-child { display: none; }
+  .tag span { display: none; }
+  nav {
+    width: 100%;
+    justify-content: space-between;
+    gap: 0;
+  }
+  .nav-link { padding: 6px 4px; font-size: 13px; }
+  .panel {
+    top: auto;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: min(74vh, 680px);
+    border-radius: 20px 20px 0 0;
+  }
+  .sheet { left: 12px; right: 12px; width: auto; }
+  .source-chip { font-size: 11px; bottom: 10px; left: 10px; }
+}
